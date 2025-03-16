@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask Blog Comment Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <form method="POST" action="/add">
+    <h1>Leave a Comment</h1>
+    <p>Fill out the form below and submit to leave a comment.</p>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="comment">Comment:</label><br>
+    <textarea id="comment" name="comment"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
