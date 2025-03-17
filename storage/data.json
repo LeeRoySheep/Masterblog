@@ -6,15 +6,17 @@
         "content": "This is my first post."
     },
     {
-        "id": 2,
-        "author": "Jane Doe",
-        "title": "Second Post",
-        "content": "This is another post."
+        "id": 3,
+        "title": "Third Post",
+        "author": "Someone Certain",
+        "content": "the updated third comment.\r\nIs this it?",
+        "likes": 4
     },
     {
-        "id": 3,
-        "title": "Third Comment",
-        "author": "Jonny Dowy",
-        "content": "Hi here my third Comment."
+        "id": 4,
+        "title": "Second Post Deleted",
+        "author": "Jane Doe",
+        "content": "Hi there the second post was deleted so I am the forth post after the third post",
+        "likes": 1
     }
 ]

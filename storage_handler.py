@@ -52,3 +52,15 @@ class StorageHandler():
         with open(self.file_path, 'w', encoding="utf8") as json_writer:
             json.dump(new_comments, json_writer, indent=4)
         return None
+
+
+    def fetch_by_id(self, id):
+        """
+        function to fetch a comment by id
+        :param id:
+        :return:
+        """
+        for post in self.comments:
+            if post["id"] == id:
+                return post
+        return None
