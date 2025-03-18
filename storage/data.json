@@ -9,14 +9,14 @@
         "id": 3,
         "title": "Third Post",
         "author": "Someone Certain",
-        "content": "the updated third comment.\r\nIs this it?",
+        "content": "the updated third comment.\r\nI don't see the point in my comment any more so I added this line.",
         "likes": 4
     },
     {
         "id": 4,
         "title": "Second Post Deleted",
-        "author": "Jane Doe",
-        "content": "Hi there the second post was deleted so I am the forth post after the third post",
-        "likes": 1
+        "author": "Jonny Doe",
+        "content": "Hi I deleted the second post as I realized I had a mistake and now added this post with all updates.",
+        "likes": 2
     }
 ]

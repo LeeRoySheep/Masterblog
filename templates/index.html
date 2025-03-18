@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Welcome to My Flask Blog!</h1>
-    <p class="main">Keep up with the latest posts below:</p>
-    <p class="main">Or just klick <a href="{{ url_for('add') }}">
-        here</a> to make a post.</p>
+    <p class="main">Keep up with the latest posts below:</p><br>
+    <p class="main">Welcome, if you want to make a post, please
+        press <a href="{{ url_for('add') }}" class="linkbutton">here</a></p>
     {% for post in posts %}
     <div class="post">
         <table>
@@ -25,13 +25,14 @@
                 <a href="{{ url_for('update', post_id=post['id']) }}"
                    class="linkbutton">Update</a>
                 {% if 'likes' not in post.keys() %}
-                    <a href="{{ url_for('like', post_id=post['id']) }}"
-                       class="smallbutton">Liked: 0</a>
+                    <p>Liked: 0<a href="{{ url_for('like', post_id=post['id']) }}"
+                                  class="smallbutton">Like</a></p>
                 {% else %}
-                    <a href="{{ url_for('like', post_id=post['id']) }}"
-                       class="smallbutton">Liked: {{ post['likes'] }}</a>
-
+                    <p>Liked: {{ post['likes'] }}
+                        <a href="{{ url_for('like', post_id=post['id']) }}"
+                               class="smallbutton">Like</a></p>
                 {% endif %}
+            </td>
         </table>
     </div>
     {% endfor %}

@@ -41,11 +41,13 @@ def add():
 def delete(post_id):
     """
     Flask route to delete a blog post by id
-    :param post_id:
+    :param post_id: as int
     :return:
     """
     post = storage.fetch_by_id(post_id)
-    storage.comments = storage.comments.remove(post)
+    posts = storage.comments
+    posts.remove(post)
+    storage.comments = posts
     return redirect(url_for('index'))
 
 
@@ -62,7 +64,6 @@ def update(post_id):
         blog_posts = storage.comments
         for pos in blog_posts:
             if pos["id"] == post_id:
-                pos["author"] = request.form.get('name')
                 pos["content"] = request.form.get('comment')
                 storage.comments = blog_posts
                 return redirect(url_for('index'))
@@ -86,20 +87,18 @@ def like(post_id):
 
 
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found():
     """
     Flask error handler for 404 page not found
-    :param error:
     :return:
     """
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
-def internal_server_error(error):
+def internal_server_error():
     """
     Flask error handler for 500 internal server error
-    :param error:
     :return:
     """
     return render_template('500.html'), 500

@@ -10,8 +10,7 @@
     <h1>Update Blog Post</h1>
 
     <form action="{{ url_for('update', post_id=post['id']) }}" method="POST">
-        <label for="name">Author:</label><br>
-        <input type="text" id="name" name="name" value="{{ post['author'] }}"><br>
+        <label>Author: {{ post['author'] }}</label><br>
         <label for="comment">Comment:</label><br>
         <textarea id="comment" name="comment">{{ post['content'] }}</textarea><br>
         <input type="submit" value="Update">
