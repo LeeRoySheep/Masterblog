@@ -87,21 +87,21 @@ def like(post_id):
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(error):
     """
     Flask error handler for 404 page not found
     :return:
     """
-    return render_template('404.html'), 404
+    return render_template('404.html', error=str(error)), 404
 
 
 @app.errorhandler(500)
-def internal_server_error():
+def internal_server_error(error):
     """
     Flask error handler for 500 internal server error
     :return:
     """
-    return render_template('500.html'), 500
+    return render_template('500.html', error=str(error)), 500
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
