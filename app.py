@@ -27,10 +27,13 @@ def add():
     if request.method == 'POST':
         blog_posts = storage.comments
         new_post = dict()
-        new_post["id"] = blog_posts[len(blog_posts)-1]["id"] + 1
+        if len(blog_posts)>0:
+            new_post["id"] = blog_posts[len(blog_posts)-1]["id"] + 1
+        else:
+            new_post["id"] = 1
         new_post["title"] = request.form.get('title')
-        new_post["author"] = request.form.get('name')
-        new_post["content"] = request.form.get('comment')
+        new_post["author"] = request.form.get('author')
+        new_post["content"] = request.form.get('content')
         blog_posts.append(new_post)
         storage.comments = blog_posts
         return redirect(url_for('index'))
@@ -64,7 +67,9 @@ def update(post_id):
         blog_posts = storage.comments
         for pos in blog_posts:
             if pos["id"] == post_id:
-                pos["content"] = request.form.get('comment')
+                pos["author"] = request.form.get('author')
+                pos["title"] = request.form.get('title')
+                pos["content"] = request.form.get('content')
                 storage.comments = blog_posts
                 return redirect(url_for('index'))
     return render_template('update.html', post=post)
@@ -104,4 +109,4 @@ def internal_server_error(error):
     return render_template('500.html', error=str(error)), 500
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)

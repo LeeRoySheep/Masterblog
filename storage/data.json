@@ -1,22 +1,23 @@
 [
     {
         "id": 1,
-        "author": "John Doe",
-        "title": "First Post",
-        "content": "This is my first post."
+        "title": "First Check",
+        "author": "Admin",
+        "content": "Hi there we hope you like this Blog",
+        "likes": 2
     },
     {
         "id": 3,
-        "title": "Third Post",
-        "author": "Someone Certain",
-        "content": "the updated third comment.\r\nI don't see the point in my comment any more so I added this line.",
-        "likes": 4
+        "title": "Important change",
+        "author": "Admin",
+        "content": "It seems that all provided content here is not further checked for correctness and needs to be handled with caution!\r\n",
+        "likes": 1
     },
     {
-        "id": 4,
-        "title": "Second Post Deleted",
-        "author": "Jonny Doe",
-        "content": "Hi I deleted the second post as I realized I had a mistake and now added this post with all updates.",
-        "likes": 2
+        "id": 5,
+        "title": "Final Note",
+        "author": "Lee Roy",
+        "content": "Hi there!\r\nFirst I want to thank you for all your efforts with correcting my files!\r\nSecondly I am happy to tell you that I adapted all your requested changes and cannot find any further bugs here!\r\nThanks and hopefully a beautiful day to you!",
+        "likes": 1
     }
 ]
